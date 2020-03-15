@@ -13,7 +13,8 @@ class AuthorsController < ApplicationController
           @author.save 
              redirect_to author_path(@author)
        else 
-        render :'authors/new' 
+          @author.invalid? 
+            render :"/authors/new"
        end 
   end
 
